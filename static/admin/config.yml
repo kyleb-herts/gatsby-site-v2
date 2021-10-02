@@ -1,0 +1,317 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Page"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: true
+    files:
+      - file: "content/pages/home.md"
+        label: "Home Page"
+        name: "home-page"
+        fields:
+          - {
+              label: Template,
+              name: template,
+              widget: hidden,
+              default: HomePage,
+            }
+          - { label: Slug, name: slug, widget: hidden, default: "" }
+          - { label: Title, name: title, widget: string }
+          # Top Section
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Heading, name: topHeading, widget: markdown, required: false }
+          - { label: Subtitle, name: topSubtitle, widget: string, required: false }
+          # Top Content Section
+          - { label: Top Content Image, name: topContentImage, widget: image }
+          - {
+              label: Top Content Tagline,
+              name: topContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Top Content Text, name: topContentText, widget: markdown, required: false }
+          - {
+              label: Top Content Link Text,
+              name: topContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Top Content Link Link,
+            name: topContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          #Testimonials Section
+          - { label: Testimonial Tagline, name: testimonialTagline, widget: string, required: false }
+          - { label: Testimonial Project, name: testimonialProject, widget: string, required: false }
+          - { label: Testimonial, name: testimonial, widget: markdown, required: false }
+          - { label: Testimonial Author, name: testimonialAuthor, widget: string, required: false }
+          - { label: Testimonial Role, name: testimonialRole, widget: string, required: false }
+          - { label: Testimonial Image, name: testimonialImage, widget: image }
+          - { label: Testimonial Link, name: testimonialLink, widget: string, required: false }
+          # Bottom Content Section
+          - { label: Bottom Content Image, name: bottomContentImage, widget: image }
+          - {
+              label: Bottom Content Tagline,
+              name: bottomContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Bottom Content Text, name: bottomContentText, widget: markdown, required: false }
+          - {
+              label: Bottom Content Link Text,
+              name: bottomContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Bottom Content Link Link,
+            name: bottomContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          #SEO
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
+      - file: "content/pages/about.md"
+        label: "About Page"
+        name: "about-page"
+        fields:
+          - {
+              label: Template,
+              name: template,
+              widget: hidden,
+              default: AboutPage,
+            }
+          - { label: Slug, name: slug, widget: hidden, default: "" }
+          - { label: Title, name: title, widget: string }
+          # Top Section
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Heading, name: topHeading, widget: markdown, required: false }
+          - { label: Subtitle, name: topSubtitle, widget: string, required: false }
+           # Top Content Section
+          - { label: Top Content Image, name: topContentImage, widget: image }
+          - {
+              label: Top Content Tagline,
+              name: topContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Top Content Text, name: topContentText, widget: markdown, required: false }
+          - {
+              label: Top Content Link Text,
+              name: topContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Top Content Link Link,
+            name: topContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          # Bottom Content Section
+          - { label: Bottom Content Image, name: bottomContentImage, widget: image }
+          - {
+              label: Bottom Content Tagline,
+              name: bottomContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Bottom Content Text, name: bottomContentText, widget: markdown, required: false }
+          - {
+              label: Bottom Content Link Text,
+              name: bottomContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Bottom Content Link Link,
+            name: bottomContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          # SEO
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }
+      - file: "content/pages/services.md"
+        label: "Services Page"
+        name: "services-page"
+        fields:
+          - {
+              label: Template,
+              name: template,
+              widget: hidden,
+              default: ServicesPage,
+            }
+          - { label: Slug, name: slug, widget: hidden, default: "" }
+          - { label: Title, name: title, widget: string }
+          # Top Section
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Heading, name: topHeading, widget: markdown, required: false }
+          - { label: Subtitle, name: topSubtitle, widget: string, required: false }
+          #Content Section 1
+          - { label: Content 1 Image, name: oneContentImage, widget: image }
+          - {
+              label: Content 1 Tagline,
+              name: oneContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Content 1 Text, name: oneContentText, widget: markdown, required: false }
+          - {
+              label: Content 1 Link Text,
+              name: oneContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Content 1 Link Link,
+            name: oneContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          #Content Section 2
+          - { label: Content 2 Image, name: twoContentImage, widget: image }
+          - {
+              label: Content 2 Tagline,
+              name: twoContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Content 2 Text, name: twoContentText, widget: markdown, required: false }
+          - {
+              label: Content 2 Link Text,
+              name: twoContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Content 2 Link Link,
+            name: twoContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          #Content Section 3
+          - { label: Content 3 Image, name: threeContentImage, widget: image }
+          - {
+              label: Content 3 Tagline,
+              name: threeContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Content 3 Text, name: threeContentText, widget: markdown, required: false }
+          - {
+              label: Content 3 Link Text,
+              name: threeContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Content 3 Link Link,
+            name: threeContentLinkLink,
+            widget: string,
+            required: false,
+          }
+          #Content Section 4
+          - { label: Content 4 Image, name: fourContentImage, widget: image }
+          - {
+              label: Content 4 Tagline,
+              name: fourContentTagline,
+              widget: string,
+              required: false,
+            }
+          - { label: Content 4 Text, name: fourContentText, widget: markdown, required: false }
+          - {
+              label: Content 4 Link Text,
+              name: fourContentLinkText,
+              widget: string,
+              required: false,
+            }
+          - {
+            label: Content 4 Link Link,
+            name: fourContentLinkLink,
+            widget: string,
+            required: false,
+          }  
+          # SEO
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Canonical Link,
+                  name: canonicalLink,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Noindex,
+                  name: noindex,
+                  widget: boolean,
+                  required: false,
+                }

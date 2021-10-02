@@ -1,0 +1,6 @@
+Copyright (C) 2019-2021 Kerbobble <kerbobble.co@gmail.com>
+
+This file is part of the Kerbobble project.
+
+The Kerbobble project can not be copied and/or distributed without the express
+permission of Kerbobble <kerbobble.co@gmail.com>.
